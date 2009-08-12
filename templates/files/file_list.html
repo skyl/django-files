@@ -1,0 +1,43 @@
+{% extends 'files/base.html' %}
+
+{% load files_tags %}
+{% load uni_form %}
+
+{% block extra_head %}
+ <link type="text/css" href="{{MEDIA_URL}}css/jquery-ui.css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+<noscript>
+{% for file in object_list %}
+  {{file}}
+{% endfor %}
+</noscript>
+<div style="float:right;">
+    <form class="uniForm" id="create-file" method="POST" enctype="multipart/form-data" 
+            action="{% url files_all %}">
+        <fieldset class="inlineLabels">
+            {{search_form|as_uni_form}}
+           <div class="form_block">
+                <input type="hidden" name="action" value="search" />
+                <input type="submit" value="Submit" />
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<div style="float:left;">
+</div>
+<div style="clear:both;"></div>
+<div id="file_list">
+{% for file in object_list %}
+  {% show_file file request.user 25 %}
+{% endfor %}
+
+</div>
+{% endblock %}
+
+{% block extra_body %}
+  <script type="text/javascript" src="{{MEDIA_URL}}files/js/jquery-ui.js"></script>
+
+{% endblock %}

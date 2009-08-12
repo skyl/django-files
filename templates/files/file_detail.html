@@ -1,0 +1,16 @@
+{% extends 'files/base.html' %}
+
+{% load files_tags %}
+
+{% block body %}
+
+<div type="text" id="datepicker"></div>
+
+<div id="file-details">
+
+    {% show_file object request.user 0 %}
+
+</div>
+
+{% endblock %}
+

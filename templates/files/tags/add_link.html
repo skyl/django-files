@@ -1,0 +1,9 @@
+<a href="{% url files_add app_label=app_label model_name=model_name id=model_instance.id %}"
+  {% if css_id %}
+    id="{{css_id}}"    
+  {% endif %}
+    class="add_point_link"
+  >Tag a file
+</a>
+<img style="display:none;" class='loading' src='/site_media/files/img/ajax-loader.gif'></img>
+

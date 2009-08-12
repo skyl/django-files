@@ -1,0 +1,31 @@
+<div class="file-unit">
+
+    <p>
+    {% if truncate %}
+    <a href="{{file.get_absolute_url}}">{{file.title}}</a>
+    {% else %}
+    {{file.title}}
+    {% endif %}    
+    </p>
+    <p>
+        {{file.file}}
+    </p>
+
+    {% if file.description %}
+    <p>
+    {% if truncate %}
+    {{ file.description|truncatewords:truncate }}
+    {% else %}
+    {{ file.description }}
+    {% endif %}
+    </p>
+    {% endif %}
+
+    {% if is_owner %}
+    <a href="{% url files_delete id=file.id %}">Delete this file</a>
+    <a href="{% url files_change id=file.id %}">Change this file</a>
+    {% endif %}
+
+</div>
+
+<hr>

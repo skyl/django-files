@@ -1,0 +1,18 @@
+{% extends 'site_base.html' %}
+
+{% load i18n %}
+{% load files_tags %}
+
+{% block body_class %}files{% endblock %}
+
+{% block subnav %}
+    {% if user.is_authenticated %}
+        <ul>
+            <li><a href="{% url files_for_user username=request.user.username%} ">{% trans "Your files" %}</a></li>
+            <li><a href="{% files_add_url request.user %} ">{% trans "Add a File" %}</a></li>
+        </ul>
+    {% else %}
+        &nbsp;
+    {% endif %}
+{% endblock %}
+

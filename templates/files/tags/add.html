@@ -1,0 +1,32 @@
+<script>
+    $(function() {
+	$('a#{{css_id}}').live('click', function(ev) {
+            var hiddenLink = $(this).hide();
+            $(this).next('img.loading').show();
+            ev.stopPropagation();
+            ev.preventDefault();
+            var href = $(this).attr("href");
+            var dia = $('<div/>');
+
+	    dia.load( href + " #create-file", null, function() {
+		var title = "Add File";
+                dia.dialog({
+                    width:550, height:525, dialogClass:'dialog', position:['right','bottom'], 
+                    show:'slide', hide: 'slide', title:title, draggable:false, resizeable:false, 
+
+                    open: function() { 
+                        hiddenLink.show();
+                        $('img.loading').hide();
+                    },
+                    
+                    beforeclose: function() { 
+                        dia.empty();
+                        dia.remove();
+                    }
+                });
+	    });
+	});
+    });
+
+
+</script>

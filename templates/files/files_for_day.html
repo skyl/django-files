@@ -1,0 +1,12 @@
+{% extends 'files/base.html' %}
+
+{% load files_tags %}
+
+{% block body %}
+<div id="for_day">
+{% for e in object_list %}
+    {% show_file e request.user 25 %}
+{% endfor %}
+</div>
+
+{% endblock %}
