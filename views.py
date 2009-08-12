@@ -168,7 +168,11 @@ def for_instance(request, app_label, model_name, id):
 
     files = File.objects.filter(content_type = ct, object_id = id)
 
+    form = SearchForm()
+    context = { 'search_form':form }
+
     return object_list(request,
-            queryset = files
+            queryset = files,
+            extra_context = context,
     )
 
