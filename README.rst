@@ -3,12 +3,12 @@ django-files
 --------------
 
 An app for tagging arbitrary models with "files".
-An file is a simple model with a filefield, title, description, owner, content-object.
+A file is a simple model with a filefield, title, description, owner, content-object.
 
 The idea is to have templatetags for tagging objects with 
 (google gears drag and drop?)
 
-Likewise, an overview calendar for model_instances will be obtainable.
+Likewise, an overview of files for various model_instances will be obtainable.
 
 
 Requirements
