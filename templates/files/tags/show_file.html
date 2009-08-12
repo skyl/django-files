@@ -1,4 +1,10 @@
+{% load thumbnail %}
+
+<div style="clear:right;"></div>
 <div class="file-unit">
+    <div style='float:right;'>
+        <img src="{% thumbnail file.file 140x220 crop %}"></img>
+    </div>
 
     <p>
     {% if truncate %}

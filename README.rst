@@ -16,6 +16,8 @@ Requirements
 
     * jQuery 1.3+
 
+    * http://code.google.com/p/sorl-thumbnail/
+
 This app is being built for pinax-0.7+.
 Your mileage may vary out of the box in other environments.
 For quick integration you will need a current copy django-uni_form, for instance.
